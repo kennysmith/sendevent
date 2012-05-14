@@ -1,4 +1,7 @@
-<%= provide(:title, "Sign up") %>
+<% provide(:title, "Edit user") %> 
+<% pid = @user.plan_id %>
+<% plan_object = Plan.find(pid) %>
+
 <div style="width:1200px; margin:0 auto">
   <div class="row">
     <div class="span6 offset3">
@@ -25,9 +28,18 @@
   <div><%= f.submit "Update" %></div>
 <% end %>
 
+<h3 class="two">Plan Info</h3>
+      <p>You are currently subscribed to the <%= plan_object.name %> plan, which gives you <%= pluralize(plan_object.posts_month, 'event') %> to post per month.</p>
+
+
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+<% if pid == 2 %>
+<%= link_to "Downgrade my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>
+<% end %>
+
+
 
 <%= link_to "Back", :back %>
 </div>
