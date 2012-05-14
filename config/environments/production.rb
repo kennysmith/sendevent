@@ -20,6 +20,9 @@ SendEvent::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  
+  config.assets.precompile += %w( jquery-ui-1.8.20.custom.css  )
+  
 
   config.action_mailer.default_url_options = { :host => 'example.com' }
   # ActionMailer Config
