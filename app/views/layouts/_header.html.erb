@@ -1,0 +1,38 @@
+
+<div id="GraydientBackground">
+  <div style="width:1200px; margin:0 auto;">
+<header class="navbar navbar-top">
+  <div style="padding-left:20px; padding-right:20px">
+      <%= link_to image_tag("logo.png", alt: "SendEvent"), root_path, id: "logo" %>
+      <div class="container">
+      <nav>
+        
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", root_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Send Event", root_path %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", user_path %></li>
+                <li><%= link_to "Settings", edit_user_registration_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Plans & Pricing", root_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+        </ul>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+</div>
+</div>

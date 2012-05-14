@@ -11,6 +11,8 @@ SendEvent::Application.routes.draw do
 
   root :to => "home#index"
 
+  match '/plansandpricing', to: 'home#plans'
+
   devise_for :users
 
   # The priority is based upon order of creation:

@@ -1,4 +1,42 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%= user.name %> </p>
-<% end %>
+<div style="background-color:#f5f5f5">
+<div id="graphic">
+  <div class="topblock">
+  <h5>Our Event Replicator sends your event to every online calendar in Orange County.</br> <span class="orange">Automatically.</span></h5>
+  	            <% if user_signed_in? %>
+              <%= link_to "Send Event", root_path, 
+                                class: "btn btn-large btn-success btn-home" %>
+            <% else %>
+              <%= link_to "See Plans & Pricing", plansandpricing_path, 
+                                class: "btn btn-large btn-success btn-home" %>
+            <% end %>
+  </div>
+</div>
+</div>
+<div id="secondbody">
+	<div class="extendedwrap">
+    	<div id="second-text-block">
+        <h5>Here's a full list<br /> of the event<br />calendars we use.</h5>
+        <span style="margin-bottom: -20px; padding-left:5px">Are we missing something?</span><br />
+      <%= link_to "Add Calendar", root_path, 
+                                class: "btn btn-large btn-success btn-home", id: "nomarg" %>
+      </div>
+    </div>
+</div>
+<div id="thirdbody">
+    <div class="wrap">
+       <center>
+            <div id="textblockbottom"><center><h5>SendEvent is the fastest
+and easiest way to send your event
+to 30 Orange County event calendars.
+Send your event today.</h5></center>
+            </div>
+            <% if user_signed_in? %>
+              <%= link_to "Send Event", root_path, 
+                                class: "btn btn-large btn-success btn-home" %>
+            <% else %>
+              <%= link_to "See Plans & Pricing", plansandpricing_path, 
+                                class: "btn btn-large btn-success btn-home" %>
+            <% end %>
+        </center>
+    </div>
+</div>     
