@@ -12,7 +12,7 @@ group :development do
 	gem "factory_girl_rails", ">= 3.1.0"
 	gem 'sqlite3'
 	gem 'quiet_assets'
-	gem 'thin'
+
 end
 
 group :test do
@@ -29,7 +29,7 @@ group :production do
 	gem 'pg', '0.12.2'
 end
 
-
+	gem 'thin'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '2.0.2'
 gem "devise", ">= 2.1.0.rc"
