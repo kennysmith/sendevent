@@ -1,20 +1,14 @@
 SendEvent::Application.routes.draw do
-  get "users/index"
-
-  root :to => "home#index"
-  devise_for :users
-  resources :users, :only => [:show, :index]
-
-  authenticated :user do
-    root :to => 'home#index'
-  end
-
-  root :to => "home#index"
-
-  match '/plansandpricing', to: 'home#plans'
-
-  devise_for :users
-
+   devise_for :users   
+    authenticated :user do
+      root :to => 'home#index'
+    end
+    
+    root :to => "home#index"
+    
+    match '/plansandpricing', to: 'home#plans'
+    
+    resources :users, :only => [:index]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

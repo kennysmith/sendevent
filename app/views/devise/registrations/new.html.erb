@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+<%= provide(:title, "Sign up") %>
+<div style="width:1200px; margin:0 auto">
+  <div class="row">
+    <div class="span6 offset3">
+<h1>Sign Up</h1>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -19,3 +23,7 @@
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+
+</div>
+</div>
+</div>
